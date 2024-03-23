@@ -31,4 +31,4 @@ COPY --chown=mavs ./sample_cpp_project /home/mavs/sample_cpp_project
 RUN mkdir /home/mavs/sample_cpp_project/build 
 WORKDIR /home/mavs/sample_cpp_project
 
-RUN cd build && cmake .. && cmake --build .
+RUN cd build && cmake -DCMAKE_BUILD_TYPE=Debug .. && cmake --build .
