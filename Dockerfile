@@ -26,3 +26,9 @@ RUN git clone https://github.com/NvChad/starter /home/mavs/.config/nvim
 
 COPY --chown=mavs ./custom/init.lua /home/mavs/.config/nvim/lua/plugins/init.lua
 COPY --chown=mavs ./custom/lspconfig.lua /home/mavs/.config/nvim/lua/configs/lspconfig.lua
+COPY --chown=mavs ./sample_cpp_project /home/mavs/sample_cpp_project
+
+RUN mkdir /home/mavs/sample_cpp_project/build 
+WORKDIR /home/mavs/sample_cpp_project
+
+RUN cd build && cmake .. && cmake --build .
