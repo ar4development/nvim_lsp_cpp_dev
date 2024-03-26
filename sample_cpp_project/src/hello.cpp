@@ -1,4 +1,5 @@
 #include <iostream>
+#include <format>
 
 void hello(std::string name);
 
@@ -7,5 +8,5 @@ int main(){
 }
 
 void hello(std::string name){
-  std::cout << "Hello, " << name << "!\n";
+  std::cout << std::format("Hello, {0}!\n", name);
 }

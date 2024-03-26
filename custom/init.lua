@@ -71,9 +71,6 @@ return {
   },
   {
     "nvim-neotest/nvim-nio",
-    config = function ()
-      require('nvim-nio').setup()
-    end
   },
   {
     "rcarriga/nvim-dap-ui",

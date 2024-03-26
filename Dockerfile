@@ -1,4 +1,4 @@
-from ubuntu:22.04
+from ubuntu:23.10
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y locales && locale-gen en_US en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 && export LANG=en_US.UTF-8
@@ -15,9 +15,12 @@ RUN apt update && apt install -y ca-certificates && curl -fsSL https://deb.nodes
 RUN NODE_MAJOR=20 && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
 RUN apt update && apt install -y nodejs
 
-RUN apt install -y ripgrep pip
+RUN apt install -y ripgrep pip sudo
 
 RUN useradd -ms /bin/bash mavs
+RUN usermod -aG sudo mavs
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 USER mavs
 
 WORKDIR /home/mavs
