@@ -1,7 +1,8 @@
 # A simple quick-start for developing cpp and python apps in NVIM-based IDE
 
 includes:
-- cpp compiler `clang` and debugger `lldb`
+- cpp compiler `clang` and debugger `lldb` (version `16`)
+- c++20 standard support
 - cmake
 - python
 - cpp language server
