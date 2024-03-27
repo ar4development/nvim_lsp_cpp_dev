@@ -7,7 +7,7 @@ RUN apt install -y --no-install-recommends tzdata && apt install -y keyboard-con
 RUN apt install -y curl unzip wget gnupg2 lsb-release software-properties-common
 RUN apt install -y git
 RUN apt install -y python-is-python3 python3-venv
-RUN apt install -y clang lldb lld  make cmake
+RUN apt install -y clang lldb lld make cmake libc++-dev libc++abi-dev
 
 RUN wget https://github.com/neovim/neovim-releases/releases/download/nightly/nvim-linux64.deb -O nvim_dist.deb && dpkg -i nvim_dist.deb
 
